@@ -38,8 +38,11 @@ android {
     sourceSets {
         main {
             dirs.each { dir ->
-                java.srcDirs "src/${dir}/java"
-                res.srcDirs "src/${dir}/res"
+                // comment out to avoid warning
+                // "main in build cannot be applied to groovy.lang.Closure"
+                // http://stackoverflow.com/questions/22240717/about-android-studio-0-5-sourcesets
+                //java.srcDirs "src/${dir}/java"
+                //res.srcDirs "src/${dir}/res"
             }
         }
         androidTest.setRoot('tests')
